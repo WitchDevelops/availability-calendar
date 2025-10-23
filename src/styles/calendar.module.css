@@ -1,4 +1,11 @@
 /* Calendar styles using Tailwind autumn theme */
+/* Base transitions for all calendar elements */
+.calendar :global(*) {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .calendar :global(.rbc-calendar) {
   color: var(--color-autumn-700);
 }
@@ -20,6 +27,9 @@
 :global(.rbc-toolbar button) {
   color: var(--color-autumn-moss);
   border-color: var(--color-autumn-sage);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 :global(.dark) .calendar :global(.rbc-toolbar button) {
@@ -59,7 +69,7 @@
   background-color: unset;
 }
 
-.calendar :global(.rbc-now > .rbc-button-link) {
+.calendar :global(.rbc-header.rbc-today) {
   background-color: var(--color-autumn-berry);
   color: var(--color-autumn-50);
 }
@@ -68,6 +78,9 @@
 .calendar :global(.rbc-event) {
   background-color: var(--color-autumn-leaf);
   border-color: var(--color-autumn-moss);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 :global(.dark) .calendar :global(.rbc-event) {
@@ -117,11 +130,15 @@
 }
 
 /* Day buttons inside date cells */
-.calendar :global(.rbc-button-link) {
+.calendar :global(.rbc-date-cell > .rbc-button-link) {
   padding: 0.5rem;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  
 }
 
 .calendar :global(.rbc-button-link):hover,
@@ -140,6 +157,17 @@
 :global(.dark) .calendar :global(.rbc-month-view),
 :global(.dark) .calendar :global(.rbc-time-view) {
   border-color: var(--color-autumn-600);
+}
+
+/* Week view */
+.calendar :global(.rbc-date-cell.rbc-now > .rbc-button-link) {
+  background-color: var(--color-autumn-berry);
+  color: var(--color-autumn-50);
+}
+
+.calendar :global(.rbc-header):hover {
+  background-color: var(--color-autumn-400);
+  color: var(--color-autumn-50);
 }
 
 /* Time slots */
