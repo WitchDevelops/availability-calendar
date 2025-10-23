@@ -1,9 +1,9 @@
-import NavBar from "../components/NavBar";
 import { CalendarView } from "../components/CalendarView";
+import { Navbar } from "../components/NavBar";
 export const HomePage = () => {
   return (
     <div className="min-h-screen">
-      <NavBar user={null} />
+      <Navbar user={null} />
       <main className="p-4">
         <CalendarView />
       </main>

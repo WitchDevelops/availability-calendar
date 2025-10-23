@@ -1,0 +1,29 @@
+:root {
+  --off-range-bg: #e6e6e6;
+  --button-text: #373a3c;
+  --button-border: #ccc;
+  --today-bg: #eaf8ff;
+}
+
+/* Override the off-range background color */
+:global(.rbc-off-range-bg) {
+  background: var(--off-range-bg);
+}
+
+/* Override the button styles */
+:global(.rbc-toolbar button) {
+  color: var(--button-text);
+  border-color: var(--button-border);
+}
+
+/* Override today's highlight */
+:global(.rbc-today) {
+  background-color: var(--today-bg);
+}
+
+[data-theme="dark"] {
+  --off-range-bg: #302f2fc9;
+  --button-text: #e0e0e0;
+  --button-border: #555;
+  --today-bg: #1a365d;
+}
