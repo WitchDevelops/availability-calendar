@@ -19,6 +19,7 @@ export default {
           900: "#2c1810", // Darkest brown
 
           // Accent colors
+          sage: "#a3b18a", // Soft sage green
           leaf: "#728c69", // Sage green
           berry: "#9b4f58", // Muted raspberry
           gold: "#d4a373", // Warm gold
@@ -41,6 +42,7 @@ export default {
           "--color-autumn-700": theme("colors.autumn.700"),
           "--color-autumn-800": theme("colors.autumn.800"),
           "--color-autumn-900": theme("colors.autumn.900"),
+          "--color-autumn-sage": theme("colors.autumn.sage"),
           "--color-autumn-leaf": theme("colors.autumn.leaf"),
           "--color-autumn-berry": theme("colors.autumn.berry"),
           "--color-autumn-gold": theme("colors.autumn.gold"),

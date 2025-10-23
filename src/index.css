@@ -23,3 +23,13 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
+
+::selection {
+  background-color: var(--color-autumn-leaf);
+  color: var(--color-autumn-50);
+}
+
+.dark ::selection {
+  background-color: var(--color-autumn-moss);
+  color: var(--color-autumn-50);
+}

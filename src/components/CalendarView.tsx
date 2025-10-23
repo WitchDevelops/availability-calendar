@@ -4,7 +4,7 @@ import { parse } from "date-fns/parse";
 import { startOfWeek } from "date-fns/startOfWeek";
 import { getDay } from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import "../styles/calendar.module.css";
+import styles from "../styles/calendar.module.css";
 const locales = {};
 const localizer = dateFnsLocalizer({
   locales,
@@ -16,7 +16,7 @@ const localizer = dateFnsLocalizer({
 
 export const CalendarView = () => {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className={`max-w-6xl mx-auto ${styles.calendar}`}>
       <BigCalendar
         localizer={localizer}
         startAccessor="start"

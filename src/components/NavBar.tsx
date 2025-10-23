@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
-export const Navbar = ({ user }: { user: any | null }) => {
+export const Navbar = ({ user }: { user: unknown | null }) => {
   const nav = useNavigate();
   async function signOut() {
     // TODO: sign out user with supabase

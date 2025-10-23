@@ -1,68 +1,76 @@
 /* Calendar styles using Tailwind autumn theme */
-:global(.rbc-calendar) {
+.calendar :global(.rbc-calendar) {
   color: var(--color-autumn-700);
 }
 
-.dark :global(.rbc-calendar) {
+:global(.dark) .calendar :global(.rbc-calendar) {
   color: var(--color-autumn-100);
 }
 
 /* Override the off-range background color */
-:global(.rbc-off-range-bg) {
+.calendar :global(.rbc-off-range-bg) {
   background: var(--color-autumn-100);
 }
 
-.dark :global(.rbc-off-range-bg) {
+:global(.dark) .calendar :global(.rbc-off-range-bg) {
   background: var(--color-autumn-900);
 }
 
 /* Override the button styles */
 :global(.rbc-toolbar button) {
-  color: var(--color-autumn-700);
-  border-color: var(--color-autumn-300);
+  color: var(--color-autumn-moss);
+  border-color: var(--color-autumn-sage);
 }
 
-.dark :global(.rbc-toolbar button) {
+:global(.dark) .calendar :global(.rbc-toolbar button) {
   color: var(--color-autumn-100);
   border-color: var(--color-autumn-600);
 }
 
-:global(.rbc-toolbar button:hover) {
-  background-color: var(--color-autumn-200);
-  color: var(--color-autumn-800);
-}
-
-.dark :global(.rbc-toolbar button:hover) {
-  background-color: var(--color-autumn-600);
+.calendar :global(.rbc-toolbar button:hover) {
+  background-color: var(--color-autumn-sage);
   color: var(--color-autumn-50);
-}
-
-:global(.rbc-toolbar button.rbc-active) {
-  background-color: var(--color-autumn-gold);
-  border-color: var(--color-autumn-moss);
-}
-
-.dark :global(.rbc-toolbar button.rbc-active) {
-  background-color: var(--color-autumn-600);
   border-color: var(--color-autumn-leaf);
 }
 
-/* Override today's highlight */
-:global(.rbc-today) {
-  background-color: var(--color-autumn-200);
+:global(.dark) .calendar :global(.rbc-toolbar button:hover) {
+  background-color: var(--color-autumn-sage);
+  color: var(--color-autumn-50);
+  border-color: var(--color-autumn-leaf);
 }
 
-.dark :global(.rbc-today) {
-  background-color: var(--color-autumn-700);
+.calendar :global(.rbc-toolbar button.rbc-active) {
+  background-color: var(--color-autumn-leaf);
+  border-color: var(--color-autumn-leaf);
+  color: var(--color-autumn-100);
+}
+
+:global(.dark) .calendar :global(.rbc-toolbar button.rbc-active) {
+  background-color: var(--color-autumn-moss);
+  border-color: var(--color-autumn-moss);
+}
+
+/* Override today's highlight */
+.calendar :global(.rbc-today) {
+  background-color: unset;
+}
+
+:global(.dark) .calendar :global(.rbc-today) {
+  background-color: unset;
+}
+
+.calendar :global(.rbc-now > .rbc-button-link) {
+  background-color: var(--color-autumn-berry);
+  color: var(--color-autumn-50);
 }
 
 /* Override event styles */
-:global(.rbc-event) {
+.calendar :global(.rbc-event) {
   background-color: var(--color-autumn-leaf);
   border-color: var(--color-autumn-moss);
 }
 
-.dark :global(.rbc-event) {
+:global(.dark) .calendar :global(.rbc-event) {
   background-color: var(--color-autumn-moss);
   border-color: var(--color-autumn-leaf);
 }
@@ -71,30 +79,56 @@
   background-color: var(--color-autumn-gold) !important;
 }
 
-.dark :global(.rbc-event.rbc-selected) {
+:global(.dark) .calendar :global(.rbc-event.rbc-selected) {
   background-color: var(--color-autumn-500) !important;
 }
 
 /* Header cells */
-:global(.rbc-header) {
+.calendar :global(.rbc-header) {
   background-color: var(--color-autumn-50);
   color: var(--color-autumn-700);
   border-color: var(--color-autumn-200);
 }
 
-.dark :global(.rbc-header) {
+:global(.dark) .calendar :global(.rbc-header) {
   background-color: var(--color-autumn-800);
   color: var(--color-autumn-100);
   border-color: var(--color-autumn-600);
 }
 
+/* Fix row misalignment */
+.calendar :global(.rbc-row-bg) {
+  right: 0;
+}
+
 /* Date cells */
-:global(.rbc-date-cell) {
+.calendar :global(.rbc-date-cell) {
   color: var(--color-autumn-700);
 }
 
-.dark :global(.rbc-date-cell) {
+@media (max-width: 440px) {
+  .calendar :global(.rbc-date-cell) {
+    text-align: center;
+  }
+}
+
+:global(.dark) .calendar :global(.rbc-date-cell) {
   color: var(--color-autumn-100);
+}
+
+/* Day buttons inside date cells */
+.calendar :global(.rbc-button-link) {
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.calendar :global(.rbc-button-link):hover,
+.calendar :global(.rbc-button-link):focus,
+.calendar :global(.rbc-button-link):active {
+  background-color: var(--color-autumn-400);
+  color: var(--color-autumn-50);
 }
 
 /* Month view grid */
@@ -103,31 +137,31 @@
   border-color: var(--color-autumn-200);
 }
 
-.dark :global(.rbc-month-view),
-.dark :global(.rbc-time-view) {
+:global(.dark) .calendar :global(.rbc-month-view),
+:global(.dark) .calendar :global(.rbc-time-view) {
   border-color: var(--color-autumn-600);
 }
 
 /* Time slots */
-:global(.rbc-timeslot-group) {
+.calendar :global(.rbc-timeslot-group) {
   border-color: var(--color-autumn-200);
 }
 
-.dark :global(.rbc-timeslot-group) {
+:global(.dark) .calendar :global(.rbc-timeslot-group) {
   border-color: var(--color-autumn-600);
 }
 
 /* Time grid */
-:global(.rbc-time-content) {
+.calendar :global(.rbc-time-content) {
   border-color: var(--color-autumn-200);
 }
 
-.dark :global(.rbc-time-content) {
+:global(.dark) .calendar :global(.rbc-time-content) {
   border-color: var(--color-autumn-600);
 }
 
 /* Selected slot highlight */
-:global(.rbc-slot-selection) {
+.calendar :global(.rbc-slot-selection) {
   background-color: color-mix(
     in srgb,
     var(--color-autumn-gold) 50%,
@@ -135,7 +169,7 @@
   );
 }
 
-.dark :global(.rbc-slot-selection) {
+:global(.dark) .calendar :global(.rbc-slot-selection) {
   background-color: color-mix(
     in srgb,
     var(--color-autumn-500) 50%,
@@ -144,19 +178,66 @@
 }
 
 /* Time header */
-:global(.rbc-time-header-content) {
+.calendar :global(.rbc-time-header-content) {
   border-color: var(--color-autumn-200);
 }
 
-.dark :global(.rbc-time-header-content) {
+:global(.dark) .calendar :global(.rbc-time-header-content) {
   border-color: var(--color-autumn-600);
 }
 
 /* Current time indicator */
-:global(.rbc-current-time-indicator) {
+.calendar :global(.rbc-current-time-indicator) {
   background-color: var(--color-autumn-berry);
 }
 
-.dark :global(.rbc-current-time-indicator) {
+:global(.dark) .calendar :global(.rbc-current-time-indicator) {
   background-color: var(--color-autumn-gold);
+}
+
+/* Day background borders */
+.calendar :global(.rbc-day-bg + .rbc-day-bg) {
+  border-left: 1px solid var(--color-autumn-200);
+}
+
+:global(.dark) .calendar :global(.rbc-day-bg + .rbc-day-bg) {
+  border-left: 1px solid var(--color-autumn-600);
+}
+
+/* Month row borders */
+.calendar :global(.rbc-month-row + .rbc-month-row) {
+  border-top: 1px solid var(--color-autumn-200);
+}
+
+:global(.dark) .calendar :global(.rbc-month-row + .rbc-month-row) {
+  border-top: 1px solid var(--color-autumn-600);
+}
+
+/* Active state overrides */
+.calendar :global(.rbc-toolbar button:active),
+.calendar :global(.rbc-toolbar button:focus) {
+  background-color: var(--color-autumn-leaf) !important;
+  border-color: var(--color-autumn-leaf) !important;
+  color: var(--color-autumn-100) !important;
+}
+
+:global(.dark) .calendar :global(.rbc-toolbar button:active),
+:global(.dark) .calendar :global(.rbc-toolbar button:focus) {
+  background-color: var(--color-autumn-moss) !important;
+  border-color: var(--color-autumn-leaf) !important;
+  color: var(--color-autumn-100) !important;
+}
+
+.calendar :global(.rbc-toolbar button.rbc-active:active),
+.calendar :global(.rbc-toolbar button.rbc-active:focus) {
+  background-color: var(--color-autumn-leaf) !important;
+  border-color: var(--color-autumn-moss) !important;
+  color: var(--color-autumn-50) !important;
+}
+
+:global(.dark) .calendar :global(.rbc-toolbar button.rbc-active:active),
+:global(.dark) .calendar :global(.rbc-toolbar button.rbc-active:focus) {
+  background-color: var(--color-autumn-moss) !important;
+  border-color: var(--color-autumn-leaf) !important;
+  color: var(--color-autumn-50) !important;
 }
