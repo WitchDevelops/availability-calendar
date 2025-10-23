@@ -17,8 +17,8 @@
 }
 
 .calendar :global(.rbc-toolbar-label) {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 /* Override the button styles */
@@ -64,11 +64,6 @@
   background-color: unset;
 }
 
-.calendar :global(.rbc-header.rbc-today) {
-  background-color: var(--color-autumn-berry);
-  color: var(--color-autumn-50);
-}
-
 /* Override event styles */
 .calendar :global(.rbc-event) {
   background-color: var(--color-autumn-leaf);
@@ -103,6 +98,11 @@
   background-color: var(--color-autumn-800);
   color: var(--color-autumn-100);
   border-color: var(--color-autumn-600);
+}
+
+.calendar :global(.rbc-header.rbc-today) {
+  background-color: var(--color-autumn-berry);
+  color: var(--color-autumn-50);
 }
 
 :global(.dark) .calendar :global(.rbc-header + .rbc-header) {
@@ -203,7 +203,8 @@
 
 /* Time header */
 .calendar :global(.rbc-time-header.rbc-overflowing) {
-  margin-right: 0 !important;
+  /* TODO: adjust the width for scrollbar on mobile */
+  margin-right: 14px !important; /* Adjust for scrollbar */
   border-right: 1px solid var(--color-autumn-200);
 }
 
