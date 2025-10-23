@@ -1,11 +1,4 @@
 /* Calendar styles using Tailwind autumn theme */
-/* Base transitions for all calendar elements */
-.calendar :global(*) {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .calendar :global(.rbc-calendar) {
   color: var(--color-autumn-700);
 }
@@ -23,13 +16,15 @@
   background: var(--color-autumn-900);
 }
 
+.calendar :global(.rbc-toolbar-label) {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
 /* Override the button styles */
 :global(.rbc-toolbar button) {
   color: var(--color-autumn-moss);
   border-color: var(--color-autumn-sage);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 :global(.dark) .calendar :global(.rbc-toolbar button) {
@@ -78,9 +73,6 @@
 .calendar :global(.rbc-event) {
   background-color: var(--color-autumn-leaf);
   border-color: var(--color-autumn-moss);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 :global(.dark) .calendar :global(.rbc-event) {
@@ -135,10 +127,6 @@
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  
 }
 
 .calendar :global(.rbc-button-link):hover,
