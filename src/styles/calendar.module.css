@@ -1,29 +1,162 @@
-:root {
-  --off-range-bg: #e6e6e6;
-  --button-text: #373a3c;
-  --button-border: #ccc;
-  --today-bg: #eaf8ff;
+/* Calendar styles using Tailwind autumn theme */
+:global(.rbc-calendar) {
+  color: var(--color-autumn-700);
+}
+
+.dark :global(.rbc-calendar) {
+  color: var(--color-autumn-100);
 }
 
 /* Override the off-range background color */
 :global(.rbc-off-range-bg) {
-  background: var(--off-range-bg);
+  background: var(--color-autumn-100);
+}
+
+.dark :global(.rbc-off-range-bg) {
+  background: var(--color-autumn-900);
 }
 
 /* Override the button styles */
 :global(.rbc-toolbar button) {
-  color: var(--button-text);
-  border-color: var(--button-border);
+  color: var(--color-autumn-700);
+  border-color: var(--color-autumn-300);
+}
+
+.dark :global(.rbc-toolbar button) {
+  color: var(--color-autumn-100);
+  border-color: var(--color-autumn-600);
+}
+
+:global(.rbc-toolbar button:hover) {
+  background-color: var(--color-autumn-200);
+  color: var(--color-autumn-800);
+}
+
+.dark :global(.rbc-toolbar button:hover) {
+  background-color: var(--color-autumn-600);
+  color: var(--color-autumn-50);
+}
+
+:global(.rbc-toolbar button.rbc-active) {
+  background-color: var(--color-autumn-gold);
+  border-color: var(--color-autumn-moss);
+}
+
+.dark :global(.rbc-toolbar button.rbc-active) {
+  background-color: var(--color-autumn-600);
+  border-color: var(--color-autumn-leaf);
 }
 
 /* Override today's highlight */
 :global(.rbc-today) {
-  background-color: var(--today-bg);
+  background-color: var(--color-autumn-200);
 }
 
-[data-theme="dark"] {
-  --off-range-bg: #302f2fc9;
-  --button-text: #e0e0e0;
-  --button-border: #555;
-  --today-bg: #1a365d;
+.dark :global(.rbc-today) {
+  background-color: var(--color-autumn-700);
+}
+
+/* Override event styles */
+:global(.rbc-event) {
+  background-color: var(--color-autumn-leaf);
+  border-color: var(--color-autumn-moss);
+}
+
+.dark :global(.rbc-event) {
+  background-color: var(--color-autumn-moss);
+  border-color: var(--color-autumn-leaf);
+}
+
+:global(.rbc-event.rbc-selected) {
+  background-color: var(--color-autumn-gold) !important;
+}
+
+.dark :global(.rbc-event.rbc-selected) {
+  background-color: var(--color-autumn-500) !important;
+}
+
+/* Header cells */
+:global(.rbc-header) {
+  background-color: var(--color-autumn-50);
+  color: var(--color-autumn-700);
+  border-color: var(--color-autumn-200);
+}
+
+.dark :global(.rbc-header) {
+  background-color: var(--color-autumn-800);
+  color: var(--color-autumn-100);
+  border-color: var(--color-autumn-600);
+}
+
+/* Date cells */
+:global(.rbc-date-cell) {
+  color: var(--color-autumn-700);
+}
+
+.dark :global(.rbc-date-cell) {
+  color: var(--color-autumn-100);
+}
+
+/* Month view grid */
+:global(.rbc-month-view),
+:global(.rbc-time-view) {
+  border-color: var(--color-autumn-200);
+}
+
+.dark :global(.rbc-month-view),
+.dark :global(.rbc-time-view) {
+  border-color: var(--color-autumn-600);
+}
+
+/* Time slots */
+:global(.rbc-timeslot-group) {
+  border-color: var(--color-autumn-200);
+}
+
+.dark :global(.rbc-timeslot-group) {
+  border-color: var(--color-autumn-600);
+}
+
+/* Time grid */
+:global(.rbc-time-content) {
+  border-color: var(--color-autumn-200);
+}
+
+.dark :global(.rbc-time-content) {
+  border-color: var(--color-autumn-600);
+}
+
+/* Selected slot highlight */
+:global(.rbc-slot-selection) {
+  background-color: color-mix(
+    in srgb,
+    var(--color-autumn-gold) 50%,
+    transparent
+  );
+}
+
+.dark :global(.rbc-slot-selection) {
+  background-color: color-mix(
+    in srgb,
+    var(--color-autumn-500) 50%,
+    transparent
+  );
+}
+
+/* Time header */
+:global(.rbc-time-header-content) {
+  border-color: var(--color-autumn-200);
+}
+
+.dark :global(.rbc-time-header-content) {
+  border-color: var(--color-autumn-600);
+}
+
+/* Current time indicator */
+:global(.rbc-current-time-indicator) {
+  background-color: var(--color-autumn-berry);
+}
+
+.dark :global(.rbc-current-time-indicator) {
+  background-color: var(--color-autumn-gold);
 }

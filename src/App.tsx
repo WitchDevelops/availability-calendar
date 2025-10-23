@@ -6,7 +6,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      <div className="min-h-screen bg-autumn-50 dark:bg-autumn-800">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
