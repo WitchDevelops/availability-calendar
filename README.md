@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Availability Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A streamlined calendar application designed to help freelancers display their availability to clients. Built with modern web technologies and focusing on simplicity and efficiency.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Managing availability as a freelancer alongside full-time employment can be challenging, especially when it comes to communicating your schedule to clients. This application solves that problem by providing a clean, accessible calendar interface where I can mark and update my availability for freelance work.
 
-## React Compiler
+### Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📅 Interactive calendar display
+- 🌓 Dark/light mode support
+- 🔒 Secure authentication for admin access
+- 💻 Responsive design for all devices
 
-## Expanding the ESLint configuration
+## Problem & Solution
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The Challenge
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+As someone balancing full-time employment with freelance work, communicating availability to clients traditionally involved:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Regular email updates with available time slots
+- Screenshots of calendars with marked dates
+- Back-and-forth communication to align schedules
+- Manual coordination between multiple parties
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### The Solution
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This calendar application streamlines the process by:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Providing a centralized, always-up-to-date view of availability
+- Eliminating the need for repeated email updates
+- Offering a clean interface that clients can check at their convenience
+- Avoiding calendar pollution issues that arise from shared calendar solutions
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Unlike sharing a Google Calendar, which can clutter clients' calendar views, this solution provides a dedicated, purpose-built platform for availability tracking.
+
+## Development Status
+
+### Completed Features
+
+✅ Project setup with Vite, React, TypeScript, and Tailwind
+✅ Calendar implementation
+✅ Frontend deployment on Vercel
+✅ Supabase database integration
+✅ Authentication system
+
+### In Progress
+
+⏳ Admin event creation functionality
+⏳ Event modal and data modeling
+⏳ UI/UX improvements
