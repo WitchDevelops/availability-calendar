@@ -3,7 +3,7 @@ import { Navbar } from "../components/NavBar";
 export const HomePage = () => {
   return (
     <div className="min-h-screen">
-      <Navbar user={null} />
+      <Navbar />
       <main className="p-4">
         <CalendarView />
       </main>

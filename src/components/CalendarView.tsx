@@ -25,7 +25,6 @@ const localizer = dateFnsLocalizer({
   getDay,
 });
 
-
 export const CalendarView = () => {
   const [date, setDate] = useState(new Date());
   const [view, setView] = useState<View>("month");
