@@ -4,8 +4,7 @@ import { format } from "date-fns/format";
 import { parse } from "date-fns/parse";
 import { startOfWeek } from "date-fns/startOfWeek";
 import { getDay } from "date-fns/getDay";
-import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabse";
+import { useState } from "react";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import styles from "../styles/calendar.module.css";
 
@@ -29,15 +28,6 @@ const localizer = dateFnsLocalizer({
 export const CalendarView = () => {
   const [date, setDate] = useState(new Date());
   const [view, setView] = useState<View>("month");
-
-  useEffect(() => {
-    async function testConnection() {
-      const { data, error } = await supabase.from("profiles").select("*");
-      if (error) console.error("Supabase error:", error);
-      else console.log("Supabase connected ✅", data);
-    }
-    testConnection();
-  }, []);
 
   return (
     <div className={`max-w-6xl mx-auto ${styles.calendar}`}>
